@@ -2,6 +2,14 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Welcome to microservices endpoint
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: "Welcome to the Scalable Service Assignment Microservice! Created by Ansh Tripathi.",
+        timestamp: new Date()
+    });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({
